@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Request name:
+  = @request.request_name
+%p
+  %b Request status:
+  = @request.request_status
+%p
+  %b Request urgency:
+  = @request.request_urgency
+%p
+  %b Request label:
+  = @request.request_label
+%p
+  %b Request number:
+  = @request.request_number
+%p
+  %b Request discription:
+  = @request.request_discription
+
+= link_to 'Edit', edit_request_path(@request)
+\|
+= link_to 'Back', requests_path

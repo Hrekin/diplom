@@ -1,0 +1,25 @@
+%h1 Listing request_people
+
+%table
+  %thead
+    %tr
+      %th Request
+      %th Person
+      %th Person type
+      %th
+      %th
+      %th
+
+  %tbody
+    - @request_people.each do |request_person|
+      %tr
+        %td= request_person.request
+        %td= request_person.person
+        %td= request_person.person_type
+        %td= link_to 'Show', request_person
+        %td= link_to 'Edit', edit_request_person_path(request_person)
+        %td= link_to 'Destroy', request_person, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Request person', new_request_person_path

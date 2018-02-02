@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Status:
+  = @material_value.status
+%p
+  %b Exemplar detail:
+  = @material_value.exemplar_detail
+%p
+  %b Position query:
+  = @material_value.position_query
+
+= link_to 'Edit', edit_material_value_path(@material_value)
+\|
+= link_to 'Back', material_values_path

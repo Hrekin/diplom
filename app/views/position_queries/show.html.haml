@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Query:
+  = @position_query.query
+%p
+  %b Model:
+  = @position_query.detail_model
+%p
+  %b Quanity:
+  = @position_query.quanity
+
+= link_to 'Edit', edit_position_query_path(@position_query)
+\|
+= link_to 'Back', position_queries_path

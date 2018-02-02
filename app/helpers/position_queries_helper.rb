@@ -1,0 +1,2 @@
+module PositionQueriesHelper
+end

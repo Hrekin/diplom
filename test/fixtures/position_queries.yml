@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query: one
+  model: one
+  quanity: 1
+
+two:
+  query: two
+  model: two
+  quanity: 1

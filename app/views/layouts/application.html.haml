@@ -1,0 +1,17 @@
+!!!
+%html
+	%head
+		%title New Project
+		= csrf_meta_tags
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+		= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+	%body
+		=render 'application/navbar_top'
+		.container
+			- if notice
+				.alert.alert-info
+					=notice
+			- if alert
+				.alert.alert-warning
+					=alert
+			= yield

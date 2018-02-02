@@ -1,0 +1,33 @@
+%h1 Listing detail_models
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Serial number
+      %th Description
+      %th Produce date
+      %th Manufacter
+      %th Properties
+      %th Category
+      %th
+      %th
+      %th
+
+  %tbody
+    - @detail_models.each do |detail_model|
+      %tr
+        %td= detail_model.name
+        %td= detail_model.serial_number
+        %td= detail_model.description
+        %td= detail_model.produce_date
+        %td= detail_model.manufacter
+        %td= detail_model.properties
+        %td= detail_model.category
+        %td= link_to 'Show', detail_model
+        %td= link_to 'Edit', edit_detail_model_path(detail_model)
+        %td= link_to 'Destroy', detail_model, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Detail model', new_detail_model_path

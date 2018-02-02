@@ -1,0 +1,23 @@
+%h1 Listing dispositions
+
+%table.table.table-hover.table-stripe.table-bordered.table-responsive
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @dispositions.each do |disposition|
+      %tr
+        %td.center= disposition.name
+        %td.right= link_to 'Show', disposition
+        %td.right= link_to 'Edit', edit_disposition_path(disposition)
+        %td.right= link_to 'Destroy', disposition, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+%button.btn.btn-primary= link_to 'New Disposition', new_disposition_path
+
+%button.btn.btn-primary QQQ

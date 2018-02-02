@@ -1,0 +1,2 @@
+module SetDetailsHelper
+end

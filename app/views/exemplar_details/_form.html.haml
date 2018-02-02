@@ -1,0 +1,25 @@
+= form_for @exemplar_detail do |f|
+  - if @exemplar_detail.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@exemplar_detail.errors.count, "error")} prohibited this exemplar_detail from being saved:"
+      %ul
+        - @exemplar_detail.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :exemplar_detail_name
+    = f.text_field :exemplar_detail_name
+  .field
+    = f.label :exemplar_detail_description
+    = f.text_field :exemplar_detail_description
+  .field
+    = f.label :inventory_number
+    = f.text_field :inventory_number
+  .field
+    = f.label :detail_model_id
+    = f.text_field :detail_model_id
+  .field
+    = f.label :set_detail_id
+    = f.text_field :set_detail_id
+  .actions
+    = f.submit 'Save'

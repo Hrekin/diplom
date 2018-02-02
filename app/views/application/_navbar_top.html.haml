@@ -1,0 +1,33 @@
+%nav.navbar.navbar-inverse.hidden-print#top-bar
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#collapibleMenu", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"} OnlinePacktShopping
+    #collapibleMenu.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-center
+        %li
+          = link_to 'Buildings', buildings_path
+        %li
+          = link_to 'Dispositions', dispositions_path
+        %li
+          = link_to 'Departments', departments_path
+        %li
+          = link_to 'Rooms', rooms_path
+        %li
+          = link_to 'Categories', categories_path
+        %li
+          = link_to 'Models', detail_models_path
+      %ul.nav.navbar-nav.navbar-right
+        -if person_signed_in?
+          %li
+            = link_to current_person.email, edit_person_registration_path
+          %li
+            = link_to 'Sign Out', destroy_person_session_path, method: :delete
+        - else
+          %li
+            = link_to 'Sing Up', new_person_registration_path
+          %li
+            = link_to 'Login', new_person_session_path

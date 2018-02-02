@@ -1,0 +1,12 @@
+= link_to buildings_path, class: 'btn btn-circle btn-success' do
+  = fa_icon :'chevron-left'
+  -#= t('buttons.back')
+%br
+.page-header
+  %h1= t('headers.buildings.edit')
+
+= render 'form'
+
+-#= link_to 'Show', @building
+-#\|
+-#= link_to 'Back', buildings_path

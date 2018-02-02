@@ -1,0 +1,31 @@
+= form_for @detail_model do |f|
+  - if @detail_model.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@detail_model.errors.count, "error")} prohibited this detail_model from being saved:"
+      %ul
+        - @detail_model.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :serial_number
+    = f.text_field :serial_number
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :produce_date
+    = f.date_select :produce_date
+  .field
+    = f.label :manufacter
+    = f.text_field :manufacter
+  .field
+    = f.label :properties
+    = f.text_field :properties
+  .field
+    = f.label :category_id
+    = f.text_field :category_id
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  serial_number: MyString
+  description: MyString
+  produce_date: 2018-01-18
+  manufacter: MyString
+  properties: MyString
+  category: one
+
+two:
+  name: MyString
+  serial_number: MyString
+  description: MyString
+  produce_date: 2018-01-18
+  manufacter: MyString
+  properties: MyString
+  category: two

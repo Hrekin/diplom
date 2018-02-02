@@ -1,0 +1,25 @@
+%h1 Listing position_queries
+
+%table
+  %thead
+    %tr
+      %th Query
+      %th detail_model
+      %th Quanity
+      %th
+      %th
+      %th
+
+  %tbody
+    - @position_queries.each do |position_query|
+      %tr
+        %td= position_query.query
+        %td= position_query.detail_model
+        %td= position_query.quanity
+        %td= link_to 'Show', position_query
+        %td= link_to 'Edit', edit_position_query_path(position_query)
+        %td= link_to 'Destroy', position_query, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Position query', new_position_query_path

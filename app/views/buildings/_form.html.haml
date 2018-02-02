@@ -1,0 +1,19 @@
+
+= form_for @building do |f|
+  = error_messages_for @building
+  .row
+    .col-md-6
+      .form-group
+        = f.label :name_building
+        = f.text_field :name_building
+        -#= f.error_messages_for(:name_building)
+  .row
+    .col-md-6
+      .form-group
+        = f.label :disposition_id
+        = f.text_field :disposition_id, class: "cust-text-rounded"
+        -#= f.error_messages_for(:disposition_id)
+  .form-actions.bottom20
+    = f.submit nil, class: 'btn btn-success'
+
+

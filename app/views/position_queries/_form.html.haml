@@ -1,0 +1,19 @@
+= form_for @position_query do |f|
+  - if @position_query.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@position_query.errors.count, "error")} prohibited this position_query from being saved:"
+      %ul
+        - @position_query.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :query_id
+    = f.text_field :query_id
+  .field
+    = f.label :detail_model_id
+    = f.text_field :detail_model_id
+  .field
+    = f.label :quanity
+    = f.number_field :quanity
+  .actions
+    = f.submit 'Save'

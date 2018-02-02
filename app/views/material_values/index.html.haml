@@ -1,0 +1,25 @@
+%h1 Listing material_values
+
+%table
+  %thead
+    %tr
+      %th Status
+      %th Exemplar detail
+      %th Position query
+      %th
+      %th
+      %th
+
+  %tbody
+    - @material_values.each do |material_value|
+      %tr
+        %td= material_value.status
+        %td= material_value.exemplar_detail
+        %td= material_value.position_query
+        %td= link_to 'Show', material_value
+        %td= link_to 'Edit', edit_material_value_path(material_value)
+        %td= link_to 'Destroy', material_value, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Material value', new_material_value_path

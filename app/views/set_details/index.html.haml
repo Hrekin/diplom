@@ -1,0 +1,21 @@
+%h1 Listing set_details
+
+%table
+  %thead
+    %tr
+      %th Set name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @set_details.each do |set_detail|
+      %tr
+        %td= set_detail.set_name
+        %td= link_to 'Show', set_detail
+        %td= link_to 'Edit', edit_set_detail_path(set_detail)
+        %td= link_to 'Destroy', set_detail, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Set detail', new_set_detail_path

@@ -1,0 +1,48 @@
+.page-header
+  %h1= t('headers.buildings.index')
+.row
+  .col-md-6
+    %input#filter{:name => "name", :type => "text"}
+
+.table-responsive
+  %table.table.table-hover.table-striped.footable{:data-sorting => "true", :data-paging => "true", :data-filtering => "true", :data-filter => "#filter"}
+    %caption.text-right
+      = link_to new_building_path, class: 'btn btn-success' do
+        = fa_icon :plus, class: 'fa-lg'
+        = t('buttons.new.building')   
+    %thead.thead-dark
+      %tr
+        %th.text-center.footable-sortable{:scope => "col"}= Building.human_attribute_name(:name_building)
+        %th.text-center{:scope => "col"}= Building.human_attribute_name(:disposition_id)
+        %th.p50
+        %th.p50
+        %th.p50
+
+    %tbody
+      - @buildings.each do |building|
+        %tr.dark
+          %td.text-center= building.name_building
+          %td.text-center= building.disposition.name
+          %td.text-center
+            = link_to edit_building_path(building), class: 'btn btn-info mb-2' do
+              = fa_icon :'pencil-square', class: 'fa-2x'
+              .align-text-bottom
+                = t('buttons.edit')
+            = link_to building_path(building), class: 'btn btn-warning' do
+              = fa_icon :'eye', class: 'fa-2x'
+              .align-bottom
+                = t('buttons.show')
+            = link_to building, method: :delete, data: {confirm: t('buttons.confirm.building') },  class: 'btn btn-danger mr-2' do
+              = fa_icon :'trash', class: 'fa-2x'
+              .align-text-top
+                = t('buttons.destroy')
+    %tfoot.hide-if-no-paging
+      %tr
+        %td.text-center{:collspan => "3"}
+          %ul.pagination
+%br
+%button#myBtn{:onclick => "topFunction()", :title => "Go to top"} 
+  = t('buttons.top')
+
+-# Insert in Are you sure -> t('buttons.confirm.user')
+

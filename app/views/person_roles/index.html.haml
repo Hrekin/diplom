@@ -1,0 +1,23 @@
+%h1 Listing person_roles
+
+%table
+  %thead
+    %tr
+      %th Person
+      %th Role
+      %th
+      %th
+      %th
+
+  %tbody
+    - @person_roles.each do |person_role|
+      %tr
+        %td= person_role.person
+        %td= person_role.role
+        %td= link_to 'Show', person_role
+        %td= link_to 'Edit', edit_person_role_path(person_role)
+        %td= link_to 'Destroy', person_role, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Person role', new_person_role_path

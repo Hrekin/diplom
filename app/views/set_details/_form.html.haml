@@ -1,0 +1,13 @@
+= form_for @set_detail do |f|
+  - if @set_detail.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@set_detail.errors.count, "error")} prohibited this set_detail from being saved:"
+      %ul
+        - @set_detail.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :set_name
+    = f.text_field :set_name
+  .actions
+    = f.submit 'Save'

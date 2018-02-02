@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Exemplar detail name:
+  = @exemplar_detail.exemplar_detail_name
+%p
+  %b Exemplar detail description:
+  = @exemplar_detail.exemplar_detail_description
+%p
+  %b Inventory number:
+  = @exemplar_detail.inventory_number
+%p
+  %b Model:
+  = @exemplar_detail.detail_model
+%p
+  %b Set detail:
+  = @exemplar_detail.set_detail
+
+= link_to 'Edit', edit_exemplar_detail_path(@exemplar_detail)
+\|
+= link_to 'Back', exemplar_details_path

@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Set name:
+  = @set_detail.set_name
+
+= link_to 'Edit', edit_set_detail_path(@set_detail)
+\|
+= link_to 'Back', set_details_path

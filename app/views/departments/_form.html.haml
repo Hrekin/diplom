@@ -1,0 +1,19 @@
+= form_for @department do |f|
+  - if @department.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@department.errors.count, "error")} prohibited this department from being saved:"
+      %ul
+        - @department.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :department_name
+    = f.text_field :department_name
+  .field
+    = f.label :department_number
+    = f.number_field :department_number
+  .field
+    = f.label :department_phone
+    = f.text_field :department_phone
+  .actions
+    = f.submit 'Save'

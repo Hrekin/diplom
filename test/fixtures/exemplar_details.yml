@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exemplar_detail_name: MyString
+  exemplar_detail_description: MyString
+  inventory_number: MyString
+  model: one
+  set_detail: one
+
+two:
+  exemplar_detail_name: MyString
+  exemplar_detail_description: MyString
+  inventory_number: MyString
+  model: two
+  set_detail: two

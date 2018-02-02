@@ -1,0 +1,16 @@
+= link_to buildings_path, class: 'btn btn-circle btn-success' do
+  = fa_icon :'chevron-left'
+  -#= t('buttons.back')
+%br
+.page-header
+  %h1= t('headers.buildings.show')
+
+%dl
+  %dt= Building.human_attribute_name(:name_building)
+  %dd= @building.name_building
+  %dt= Building.human_attribute_name(:disposition_id)
+  %dd= @building.disposition.name
+
+-#= link_to 'Edit', edit_building_path(@building)
+-#\|
+-#= link_to 'Back', buildings_path

@@ -1,0 +1,19 @@
+= form_for @material_value do |f|
+  - if @material_value.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@material_value.errors.count, "error")} prohibited this material_value from being saved:"
+      %ul
+        - @material_value.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :status
+    = f.text_field :status
+  .field
+    = f.label :exemplar_detail_id
+    = f.text_field :exemplar_detail_id
+  .field
+    = f.label :position_query_id
+    = f.text_field :position_query_id
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @detail_model.name
+%p
+  %b Serial number:
+  = @detail_model.serial_number
+%p
+  %b Description:
+  = @detail_model.description
+%p
+  %b Produce date:
+  = @detail_model.produce_date
+%p
+  %b Manufacter:
+  = @detail_model.manufacter
+%p
+  %b Properties:
+  = @detail_model.properties
+%p
+  %b Category:
+  = @detail_model.category
+
+= link_to 'Edit', edit_detail_model_path(@detail_model)
+\|
+= link_to 'Back', detail_models_path

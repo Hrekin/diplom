@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Request:
+  = @query.request
+%p
+  %b Quantity:
+  = @query.quantity
+%p
+  %b Person:
+  = @query.person
+%p
+  %b Depatrment:
+  = @query.department
+
+= link_to 'Edit', edit_query_path(@query)
+\|
+= link_to 'Back', queries_path

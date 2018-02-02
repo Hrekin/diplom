@@ -1,0 +1,25 @@
+%h1 Listing departments
+
+%table
+  %thead
+    %tr
+      %th Department name
+      %th Department number
+      %th Department phone
+      %th
+      %th
+      %th
+
+  %tbody
+    - @departments.each do |department|
+      %tr
+        %td= department.department_name
+        %td= department.department_number
+        %td= department.department_phone
+        %td= link_to 'Show', department
+        %td= link_to 'Edit', edit_department_path(department)
+        %td= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Department', new_department_path
