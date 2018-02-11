@@ -15,18 +15,9 @@
   .field
     = f.label :second_name
     = f.text_field :second_name
-  / .field
-  /   = f.label :birthday
-  /   = f.date_field :birthday
-  .container
-    .col-sm-6
-      .form-group
-        = f.label :birthday
-        .input-group.date#datetimepicker
-          = f.text_field(:birthday, class: 'form-control')
-          %span.input-group-addon
-            %span.glyphicon.glyphicon-calendar
- 
+  .field
+    = f.label :birthday
+    = f.date_field :birthday
   .field
     = f.label :email
     = f.text_field :email
@@ -35,26 +26,22 @@
     = f.text_field :person_phone
   .field
     = f.label :department_id
-    = f.select :department_id, select_department, {} ,{ class: 'selectpicker show-menu-arrow', 'data-live-search': true}
+    = f.text_field :department_id
     / _______________________________________
+    .field
+    = f.label :current_password
+    = f.password_field :current_password, autocomplete: "off"
+
   .field
     = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
     = f.password_field :password, autocomplete: "off"
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation, autocomplete: "off"
     / __________________________________________________________
-    / nested start
-  / %h3 Role
-  = f.fields_for :person_roles do |person_role|
-    = render 'person_role_fields', f: person_role
-  .links
-    = link_to_add_association 'add person_role', f, :person_roles
   .actions
     = f.submit 'Save'
+
 
 
   

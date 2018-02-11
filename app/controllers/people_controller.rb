@@ -1,12 +1,15 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_person!
+  before_action :authenticate_person!#, only: [:index]
+  
+  # prepend_before_action :require_no_authentication, only: :cancel 
+  # before_action :require_no_authentication, only: [:new, :create, :cancel]
 
   # GET /people
   # GET /people.json
   def index
     #authorize! :read, Person
-    @people = Person.all
+    @people = Person.includes(:department).all
   end
 
   # GET /people/1
@@ -27,7 +30,7 @@ class PeopleController < ApplicationController
   # POST /people.json
   def create
     @person = Person.new(person_params)
-
+     # raise "#{@person.inspect}"
     respond_to do |format|
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
@@ -63,6 +66,8 @@ class PeopleController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person
@@ -71,6 +76,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:last_name, :first_name, :second_name, :birthday, :email, :person_phone, :department_id, :password, :password_confirmation)
+      params.require(:person).permit(:last_name, :first_name, :second_name, :birthday, :email, :person_phone, :department_id, :password, :password_confirmation, person_roles_attributes: [:id, :role_id, :_destroy])
     end
 end

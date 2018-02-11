@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'rails-i18n'
 gem 'haml-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'cancancan', '~> 2.0'
 gem 'font-awesome-rails'
 gem 'puma', '~> 3.7'
@@ -43,6 +43,10 @@ gem 'jquery-rails'
 gem 'footable-on-rails'
 gem 'devise'
 gem 'bcrypt', platforms: :ruby
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'bootstrap-select-rails'
+gem 'cocoon', '~> 1.2', '>= 1.2.11'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

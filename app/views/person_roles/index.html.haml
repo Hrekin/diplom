@@ -12,8 +12,8 @@
   %tbody
     - @person_roles.each do |person_role|
       %tr
-        %td= person_role.person
-        %td= person_role.role
+        %td= person_role.person.last_name
+        %td= person_role.role.role_name
         %td= link_to 'Show', person_role
         %td= link_to 'Edit', edit_person_role_path(person_role)
         %td= link_to 'Destroy', person_role, method: :delete, data: { confirm: 'Are you sure?' }

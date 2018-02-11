@@ -12,13 +12,31 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require moment
+//= require cocoon
+//= require bootstrap-datetimepicker
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-select
 //= require_tree .
 //= require footable-on-rails
-$(document).ready(function(){
-	$('.footable').footable();
-})
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+
+
+
+
+// $(document).ready(function(){
+// 	$('#datetimepicker9').datetimepicker({
+// 		viewMode: 'years'
+// 	});
+// })
+
+// $("#datetimepicker").click(function(){
+//     alert("The paragraph was clicked.");
+// }); 
+
+
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -35,3 +53,7 @@ function scrollFunction() {
 function topFunction() {
    $("HTML, BODY").animate({ scrollTop: 0 }, 1000);
 } 
+
+$(document).on('turbolinks:load', function() {
+  $('.selectpicker').selectpicker();
+})
